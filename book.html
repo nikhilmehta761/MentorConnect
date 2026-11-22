@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Appointment</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<nav>
+    <h2>MentorConnect</h2>
+    <div>
+        <a href="/">Home</a>
+        <a href="/mentors">Mentors</a>
+        <a href="/students">Students</a>
+        <a href="/book">Book Appointment</a>
+        <a href="/appointments">Appointments</a>
+    </div>
+</nav>
+
+<div class="container">
+
+    <h1>Book Appointment</h1>
+
+{% if error %}
+    <div class="error-message">
+        {{ error }}
+    </div>
+{% endif %}
+
+    <p>Select student, mentor, date and time.</p>
+
+    <form method="POST" class="form-box">
+
+        <h2>Appointment Details</h2>
+
+        <label>Select Student</label>
+        <select name="student_id" required>
+            <option value="">Choose Student</option>
+            {% for student in students %}
+            <option value="{{ student[0] }}">
+                {{ student[1] }}
+            </option>
+            {% endfor %}
+        </select>
+
+        <label>Select Mentor</label>
+        <select name="mentor_id" required>
+            <option value="">Choose Mentor</option>
+            {% for mentor in mentors %}
+            <option value="{{ mentor[0] }}">
+                {{ mentor[1] }} - {{ mentor[2] }}
+            </option>
+            {% endfor %}
+        </select>
+
+        <label>Appointment Date</label>
+        <input type="date" name="date" required>
+
+        <label>Appointment Time</label>
+        <input type="time" name="time" required>
+
+        <button type="submit">Confirm Appointment</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

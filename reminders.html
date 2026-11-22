@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Appointment Reminders</title>
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<nav>
+    <h2>MentorConnect</h2>
+    <div>
+        <a href="/">Home</a>
+        <a href="/mentors">Mentors</a>
+        <a href="/students">Students</a>
+        <a href="/book">Book Appointment</a>
+        <a href="/appointments">Appointments</a>
+        <a href="/reminders">Reminders</a>
+    </div>
+</nav>
+
+<div class="container">
+
+    <h1>Appointment Reminders</h1>
+    <p>Check your upcoming appointments.</p>
+
+    <table>
+        <tr>
+            <th>Student</th>
+            <th>Mentor</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Reminder Status</th>
+        </tr>
+
+        {% for reminder in reminders %}
+        <tr>
+            <td>{{ reminder[0] }}</td>
+            <td>{{ reminder[1] }}</td>
+            <td>{{ reminder[2] }}</td>
+            <td>{{ reminder[3] }}</td>
+
+            <td>
+                {% if reminder[4] == 1 %}
+                    Reminder Sent
+                {% else %}
+                    Pending
+                {% endif %}
+            </td>
+        </tr>
+        {% else %}
+        <tr>
+            <td colspan="5">No upcoming appointments.</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+</div>
+
+</body>
+</html>

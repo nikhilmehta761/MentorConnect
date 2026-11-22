@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MentorConnect | Home</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+
+    <nav>
+        <h2>MentorConnect</h2>
+
+        <div>
+            <a href="/">Home</a>
+            <a href="/mentors">Mentors</a>
+            <a href="/students">Students</a>
+            <a href="/book">Book Appointment</a>
+            <a href="/appointments">Appointments</a>
+            <a href="/reminders">Reminders</a>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+
+    <section class="hero">
+
+        <h1>Welcome to MentorConnect</h1>
+
+        <p>
+            Connect with experienced mentors and book
+            your appointments easily.
+        </p>
+
+        <a href="/book" class="btn">
+            Book Appointment
+        </a>
+
+    </section>
+
+
+    <!-- Features Section -->
+
+    <section class="features">
+
+        <div class="card">
+
+            <h3>👨‍🏫 Mentors</h3>
+
+            <p>
+                View and manage mentors.
+                Find the right mentor for your learning journey.
+            </p>
+
+            <a href="/mentors" class="card-btn">
+                View Mentors
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>🎓 Students</h3>
+
+            <p>
+                Register student details and
+                manage student information.
+            </p>
+
+            <a href="/students" class="card-btn">
+                Register Student
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>📅 Appointments</h3>
+
+            <p>
+                Book appointments with mentors
+                and manage your bookings.
+            </p>
+
+            <a href="/appointments" class="card-btn">
+                View Appointments
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>🔔 Reminders</h3>
+
+            <p>
+                Check upcoming appointments
+                and their reminder status.
+            </p>
+
+            <a href="/reminders" class="card-btn">
+                View Reminders
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- About Section -->
+
+    <section class="about">
+
+        <h2>About MentorConnect</h2>
+
+        <p>
+            MentorConnect is a simple appointment booking
+            system developed using Python Flask and SQLite.
+
+            It helps students connect with mentors,
+            schedule appointments and receive reminders.
+        </p>
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            © 2026 MentorConnect.
+            All Rights Reserved.
+        </p>
+
+        <p>
+            Developed as a BCA 3rd Semester Mini Project.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

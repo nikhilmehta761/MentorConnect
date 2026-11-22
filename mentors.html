@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manage Mentors</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<nav>
+    <h2>MentorConnect</h2>
+    <div>
+        <a href="/">Home</a>
+        <a href="/mentors">Mentors</a>
+        <a href="/students">Students</a>
+        <a href="/book">Book Appointment</a>
+        <a href="/appointments">Appointments</a>
+    </div>
+</nav>
+
+<div class="container">
+    <h1>Manage Mentors</h1>
+    <p>Add and manage your mentors here.</p>
+
+    <form method="POST" class="form-box">
+        <h2>Add New Mentor</h2>
+
+        <input type="text" name="name" placeholder="Mentor Name" required>
+
+        <input type="text" name="subject" placeholder="Subject / Specialization" required>
+
+        <input type="email" name="email" placeholder="Email">
+
+        <input type="text" name="available_time" placeholder="Available Time (10 AM - 5 PM)" required>
+
+        <button type="submit">Add Mentor</button>
+    </form>
+
+    <h2>Mentor List</h2>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Subject</th>
+            <th>Email</th>
+            <th>Available Time</th>
+        </tr>
+
+        {% for mentor in mentors %}
+        <tr>
+            <td>{{ mentor[0] }}</td>
+            <td>{{ mentor[1] }}</td>
+            <td>{{ mentor[2] }}</td>
+            <td>{{ mentor[3] }}</td>
+            <td>{{ mentor[4] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+</body>
+</html>
